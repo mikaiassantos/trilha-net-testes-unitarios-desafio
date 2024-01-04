@@ -14,20 +14,27 @@ namespace TestesUnitarios.Desafio.Console.Services
             return contem;
         }
 
-        public List<int> MultiplicarNumerosLista(List<int> lista, int numero)
+        public List<int> MultiplicarNumerosLista(List<int> lista)
         {
-            var listaMultiplicada = lista.Select(x => x * numero).ToList();
-            return listaMultiplicada;
+            List<int> resultado = new List<int>();
+
+            foreach (var numero in lista)
+            {
+                resultado.Add(numero * 2);
+            }
+
+            return resultado;
+        }
+
+
+        public int RetornarMenorNumeroLista(List<int> lista)
+        {
+            return lista.Min();
         }
 
         public int RetornarMaiorNumeroLista(List<int> lista)
         {
             return lista.Max();
-        }
-
-        public int RetornarMenorNumeroLista(List<int> lista)
-        {
-            return lista.Min();
         }
     }
 }
